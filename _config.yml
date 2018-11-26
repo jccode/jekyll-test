@@ -41,3 +41,10 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+collections:
+  # collections_dir: _collections
+  staff_members:
+    output: true
+  
