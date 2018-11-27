@@ -43,8 +43,8 @@ plugins:
 #   - vendor/ruby/
 
 
+collections_dir: collections
 collections:
-  # collections_dir: _collections
   staff_members:
     output: true
   
