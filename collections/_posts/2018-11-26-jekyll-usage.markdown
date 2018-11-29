@@ -24,7 +24,9 @@ tags: [jekyll, usage]
 
 + Collections [usage]({{ site.baseurl }}{% post_url 2018-11-26-collection-usage %} ) 
 
-
++ Data files
+  - 数据文件放到`_data`目录下，支持`csv`,`yaml`,`yml`,`json`等数据格式
+  - 然后通过`site.data`进行访问
 
 
 
