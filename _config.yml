@@ -47,4 +47,10 @@ collections_dir: collections
 collections:
   staff_members:
     output: true
-  
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+      

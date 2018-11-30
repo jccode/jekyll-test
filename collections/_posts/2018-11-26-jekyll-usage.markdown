@@ -87,3 +87,16 @@ jekyll 3.0 以上，
         - jekyll-coffeescript
 
 
+# 静态文件(static_files) #
+
+比如，把图片放到 `./assets/img` 目录下.
+
+修改 `_config.yml` , 添加 Front Matter:
+
+    defaults:
+      - scope:
+          path: "assets/img"
+        values:
+          image: true
+
+然后, [访问图片]({{ site.baseurl }}{% post_url 2018-11-30-image-usage %}).
