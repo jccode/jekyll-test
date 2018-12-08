@@ -100,3 +100,42 @@ jekyll 3.0 以上，
           image: true
 
 然后, [访问图片]({{ site.baseurl }}{% post_url 2018-11-30-image-usage %}).
+
+
+# 分页(Paginate) #
+
+## 添加插件 ##
+
+Jekyll 3需要添加`jekyll-paginate`插件.
+Jekyll 2不需要这一步,分页是标准插件.
+
+1. 修改 `_config.yml`,在`plugins`键下,增加`- jekyll-paginate`.
+2. 修改 `Gemfile`,在`group :jekyll_plugins do`下,增加`gem "jekyll-paginate"`.
+3. 添加完成后,执行`bundle install`.
+
+关于 [如何添加plugin](https://jekyllrb.com/docs/plugins/installation/ ), [Jekyll分页](https://jekyllrb.com/docs/pagination/ ) .
+
+
+## 配置分页 ##
+
+添加插件完成后,就是配置了. 修改`_config.yml`, 添加下面的配置:
+
+    paginate: 5
+    paginate_path: "/blog/page:num/"
+
+第一个`paginate`指明分页的页数,
+后面一个`paginate_path`是分页的路径,`:num`是分页的页码.
+
+比如,按照上面的配置,我们则必须在`blog`目录下建一个`index.html`,里面是要显示分页相关的代码.
+然后jekyll会根据这个文件做为模板,为我们生成分页的页面(当我们的posts数量超过5个的时候).
+
+我们假设一共有12个,生成的逻辑是:
+
+前5个posts会生成在`/blog/index.html`页面中,
+然后,接下来的5个posts会生成在`/blog/page2/index.html`,依此类推,
+最后的两个会生成在`/blog/page3/index.html`中.
+
+# 其他 #
+
+Jekyll只处理有`Front matter`的文件, [参考](https://jekyllrb.com/docs/variables/ ) .
+
