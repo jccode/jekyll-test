@@ -5,7 +5,7 @@ title: Post分页
 
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
-<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+<h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
 <p class="author">
     <span class="date">{{ post.date }}</span>
 </p>
@@ -19,7 +19,7 @@ title: Post分页
 <!-- Pagintion links -->
 <div class="pagination">
     {% if paginator.previous_page %}
-    <a class="previous" href="{{ paginator.previous_page_path }}">Previous</a>
+    <a class="previous" href="{{ paginator.previous_page_path | relative_url }}">Previous</a>
     {% else %}
     <span class="previous">Previous</span>
     {% endif %}
@@ -29,7 +29,7 @@ title: Post分页
     </span>
 
     {% if paginator.next_page %}
-    <a class="next" href="{{ paginator.next_page_path }}">Next</a>
+    <a class="next" href="{{ paginator.next_page_path | relative_url }}">Next</a>
     {% else %}
     <span class="next">Next</span>
     {% endif %}
