@@ -11,6 +11,6 @@ tags: [jekyll, usage]
 
 {% assign image_files = site.static_files | where: "image", true %}
 {% for img in image_files %}
-<img src="{{ img.path }}" alt="{{ img.name }}"/>
+<img src="{{ img.path | relative_url }}" alt="{{ img.name }}"/>
 {% endfor %}
 
