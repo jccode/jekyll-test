@@ -135,7 +135,45 @@ Jekyll 2不需要这一步,分页是标准插件.
 然后,接下来的5个posts会生成在`/blog/page2/index.html`,依此类推,
 最后的两个会生成在`/blog/page3/index.html`中.
 
+
 # 其他 #
 
 Jekyll只处理有`Front matter`的文件, [参考](https://jekyllrb.com/docs/variables/ ) .
+
+
+# Github page #
+
+Github page分两种,
+
+- 个人主页, url为: `http://<username>.github.io`
+- 项目主页, url为: `http://<username>.github.io/<repo-name>`
+
+对于"项目主页"有一点需要注意,就是它生成的url会带有"项目名称",
+因此,你需要将`_config.yml`配置中的`baseurl`的值,也改成`<repo-name>`.
+
+
+## Gemfile ##
+
+需要把
+
+    gem "jekyll", "~> 3.8.4"
+
+去掉(注释掉即可). 然后把
+
+    gem "github-pages", group: :jekyll_plugins
+
+的注释放开.加入这个插件.
+
+
+## theme ##
+
+github官方只支持部分的主题,
+如果想用其他的主题(Gem-base theme),可以使用 `remote_theme`. 比如:
+
+    remote_theme: jekyll/minima
+
+
+# 一些注意事项 #
+
+写url的时候,一定要加 `relative_url` 过滤器,这样才能保证在设置有`baseurl`的情况下仍能正常工作.
 
